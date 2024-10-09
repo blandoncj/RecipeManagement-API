@@ -26,12 +26,17 @@ class User(BaseModel):
     account_type: str = Field(
         ..., example="admin", description="The account type of the user.", max_length=30
     )
+
     profile_picture: str = Field(
         ...,
         example="profile.jpg",
         description="The profile picture of the user.",
         max_length=255,
     )
+
+    role_id: int = Field(..., example=1, description="The role id of the user.")
+
+    is_active: bool = Field(..., example=True, description="The status of the user.")
 
     class Config:
         """
