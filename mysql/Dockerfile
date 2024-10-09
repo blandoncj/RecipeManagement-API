@@ -1,8 +1,8 @@
 FROM mysql:8.0
 
 ENV MYSQL_ROOT_PASSWORD root
-ENV MSQL_DATABASE recipe_management_db
-ENV MYSQL_USER eam_user 
+ENV MYSQL_DATABASE recipe_management
+ENV MYSQL_USER eam_user
 ENV MYSQL_PASSWORD root
 
 EXPOSE 3306
