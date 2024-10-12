@@ -186,7 +186,7 @@ class InventoryIngredient(Base):
     user = relationship("User", back_populates="inventories")
 
 
-class RecipeCategory(Base):
+class Category(Base):
     """
     Recipe categories table
     """
@@ -197,7 +197,7 @@ class RecipeCategory(Base):
     is_active = Column(Boolean, default=True)
 
     # relationship
-    recipes = relationship("RecipeCategories", back_populates="category")
+    recipes = relationship("RecipeCategory", back_populates="category")
 
 
 class Recipe(Base):
@@ -223,12 +223,12 @@ class Recipe(Base):
     menus = relationship("MenuRecipe", back_populates="recipe")
 
 
-class RecipeCategories(Base):
+class RecipeCategory(Base):
     """
     Recipe categories table
     """
 
-    __tablename__ = "recipe_categories"
+    __tablename__ = "recipe_category"
     recipe_id = Column(
         Integer, ForeignKey("recipes.id"), primary_key=True, nullable=False
     )
@@ -238,7 +238,7 @@ class RecipeCategories(Base):
 
     # relationship
     recipe = relationship("Recipe", back_populates="categories")
-    category = relationship("RecipeCategory", back_populates="recipes")
+    category = relationship("Category", back_populates="recipes")
 
 
 class RecipeIngredient(Base):
