@@ -1,7 +1,5 @@
 # RecipeManagement-API
 
-![Swagger UI](assets/swagger-ui.png)
-
 ## Description
 
 This project is a **RecipeManagement-API** developed with **FastAPI** in Python. The system allows users to manage cooking recipes, plan weekly menus, and generate shopping lists based on the ingredients needed for the selected recipes. It also suggests recipes based on the available ingredients in the users' inventory.
